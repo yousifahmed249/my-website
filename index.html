@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yousif Ahmed</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                 transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            padding: 30px;
+            background-color: #111;
+            border-bottom: 2px solid red;
+        }
+
+        header h1 {
+            color: red;
+            font-size: 40px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #111;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: red;
+        }
+
+        #themeBtn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkred;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px red;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #111, #222);
+            border-bottom: 2px solid red;
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero h1 {
+            color: red;
+            font-size: 42px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin: 15px;
+        }
+
+        .hero a {
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .hero button {
+            transition: transform 0.3s;
+        }
+
+        .hero button:hover {
+            transform: scale(1.08);
+        }
+
+        .card {
+            width: 350px;
+            max-width: 90%;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 20px;
+            background-color: #222;
+            box-shadow: 0 0 20px red;
+        }
+
+        .card h2 {
+            color: red;
+        }
+
+        .card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid red;
+            transition: transform 0.4s;
+            animation: float 3s ease-in-out infinite;
+        }
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+        .card img:hover {
+            transform: scale(1.1);
+        }
+
+        .card a button {
+            margin-top: 10px;
+        }
+
+        .about {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .about h2 {
+            color: red;
+        }
+
+        /* Skills */
+
+        #skills {
+            text-align: center;
+        }
+
+        .skill {
+            display: inline-block;
+            width: 120px;
+            background-color: #222;
+            color: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px red;
+            transition: transform 0.3s;
+            animation: slideUp 1s ease-out;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+        }
+
+        .bar {
+            width: 100%;
+            height: 8px;
+            background-color: #444;
+            border-radius: 10px;
+            margin-top: 8px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: red;
+            border-radius: 10px;
+        }
+
+        .python {
+            width: 80%;
+        }
+
+        .java {
+            width: 70%;
+        }
+
+        .html {
+            width: 90%;
+        }
+
+        .css {
+            width: 85%;
+        }
+
+        .javascript {
+            width: 70%;
+        }
+
+        /* Projects */
+
+        .project {
+            background-color: #222;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px red;
+            transition: transform 0.3s;
+            animation: slideUp 1s ease-out;
+            cursor: pointer;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+        }
+
+        .project h3 {
+            color: red;
+        }
+
+        .project button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Services */
+
+        .service {
+            background-color: #222;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px red;
+            transition: transform 0.3s;
+            animation: slideUp 1s ease-out;
+        }
+
+        .service:hover {
+            transform: translateY(-8px);
+        }
+
+        .service h3 {
+            color: red;
+        }
+
+        /* Contact Form */
+
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+        }
+
+        form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        #success {
+            color: #25D366;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        /* Social Buttons */
+
+        .whatsapp {
+            background-color: #25D366;
+        }
+
+        .instagram {
+            background-color: #E1306C;
+        }
+
+        /* Top Button */
+
+        #topBtn {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        /* Footer */
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #111;
+            color: white;
+            text-align: center;
+            border-top: 2px solid red;
+        }
+
+        /* Light Mode */
+
+        body.light {
+            background-color: white;
+            color: black;
+        }
+
+        body.light header,
+        body.light nav,
+        body.light footer {
+            background-color: #f0f0f0;
+        }
+
+        body.light nav a {
+            color: black;
+        }
+
+        body.light .card,
+        body.light .project,
+        body.light .service,
+        body.light .skill {
+            background-color: #f5f5f5;
+            color: black;
+        }
+
+        body.light #themeBtn {
+            background-color: #222;
+            color: white;
+        }
+
+        body.light .whatsapp,
+        body.light .instagram {
+            color: white;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            nav a {
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+                
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .skill {
+                width: 100px;
+                padding: 12px;
+                margin: 5px;
+            }
+
+            #themeBtn {
+                top: 10px;
+                right: 10px;
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+        .project img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: block;
+}
+.project img {
+    transition: transform 0.4s ease;
+}
+.project img:hover {
+    transform: scale(1.05);
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+        <h1>Yousif Ahmed</h1>
+        <p>Information Technology Student</p>
+    </header>
+
+    <!-- Navigation -->
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Theme Button -->
+
+    <button id="themeBtn" onclick="toggleTheme()">
+        ☀️ Light Mode
+    </button>
+
+    <!-- Hero -->
+<div id="clock"></div>
+<button onclick="changeMessage()">Click Me</button>
+
+<p id="message">Welcome to my website! 👋</p>
+<p>Visitors: <span id="visitors">0</span> 👀</p>
+<button onclick="showInfo()">Show More</button>
+
+<p id="info" style="display: none;">
+    I am Yousif Ahmed, an Information Technology student.
+    I love programming, web development and AI projects. 🚀
+</p>
+    <section class="hero">
+        <h1>Hi, I'm Yousif Ahmed 👋</h1>
+        <p>Information Technology Student</p>
+        <p>Welcome to my personal portfolio ❤️</p>
+
+        <a href="#projects">
+            <button>🚀 View My Projects</button>
+        </a>
+
+        <a href="#contact">
+            <button>📩 Contact Me</button>
+        </a>
+    </section>
+
+    <!-- Profile -->
+
+    <div class="card">
+
+        <img src="profile.jpg" alt="Yousif Ahmed">
+
+        <h2>Yousif Ahmed</h2>
+
+        <p>Information Technology Student</p>
+
+        <p>Welcome to my personal website ❤️</p>
+
+        <a href="#about">
+            <button>About Me</button>
+        </a>
+
+        <a href="#contact">
+            <button>Contact Me</button>
+        </a>
+
+      <a href="cv.html" target="_blank">
+    <button>📄 View My CV</button>
+</a>
+
+<a href="Yousif%20Ahmed%20-%20CV.pdf" download>
+    <button>⬇️ Download CV</button>
+</a>
+
+    </div>
+
+    <!-- About -->
+
+    <div class="about" id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            Hello! My name is Yousif Ahmed.
+            I am an Information Technology student.
+            I am learning programming and web development.
+        </p>
+
+    </div>
+
+    <!-- Education -->
+
+    <div class="about" id="education">
+
+        <h2>Education</h2>
+
+        <h3>Bachelor of Information Technology</h3>
+
+        <p>Rathinam College</p>
+
+        <p>Information Technology Engineering Student</p>
+
+    </div>
+
+    <!-- Certificates -->
+
+    <div class="about" id="certificates">
+
+        <h2>Certificates</h2>
+
+        <h3>Python Programming</h3>
+
+        <p>Programming fundamentals and Python basics.</p>
+
+        <h3>Web Development</h3>
+
+        <p>HTML, CSS and JavaScript fundamentals.</p>
+
+    </div>
+
+    <!-- Skills -->
+
+    <div class="about" id="skills">
+
+        <h2>My Skills</h2>
+
+        <div class="skill">
+            💻 Python
+            <div class="bar">
+                <div class="progress python"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            ☕ Java
+            <div class="bar">
+                <div class="progress java"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            🌐 HTML
+            <div class="bar">
+                <div class="progress html"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            🎨 CSS
+            <div class="bar">
+                <div class="progress css"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            ⚡ JavaScript
+            <div class="bar">
+                <div class="progress javascript"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Services -->
+
+    <div class="about" id="services">
+
+        <h2>My Services</h2>
+
+        <div class="service">
+
+            <h3>🌐 Web Development</h3>
+
+            <p>
+                Creating responsive and modern websites.
+            </p>
+
+        </div>
+
+        <div class="service">
+
+            <h3>💻 Python Programming</h3>
+
+            <p>
+                Building simple Python programs and applications.
+            </p>
+
+        </div>
+
+        <div class="service">
+
+            <h3>🤖 AI Projects</h3>
+
+            <p>
+                Developing AI-based student projects and dashboards.
+            </p>
+
+        </div>
+
+    </div>
+<!-- Achievements -->
+
+<div class="about" id="achievements">
+
+    <h2>🏆 My Achievements</h2>
+
+    <div class="project">
+        <div class="project" onclick="showAchievement('Python Programming')">
+    <h3>🐍 Python Programming</h3>
+    <p>Learning Python programming and problem solving.</p>
+</div>
+        
+
+    <div class="project" onclick="showAchievement('Web Development')">
+        <h3>🌐 Web Development</h3>
+        <p>Building websites using HTML, CSS and JavaScript.</p>
+    </div>
+
+    <div class="project" onclick="showAchievement('AI Project')">
+        <h3>🤖 AI Project</h3>
+        <p>Developing the AI Assignment Risk Visualization dashboard.</p>
+    </div>
+
+</div>
+    <!-- Projects -->
+
+    <div class="about" id="projects">
+
+        <h2>My Projects</h2>
+
+        <div class="project">
+            <img
+    src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
+    alt="AI Project"
+    onclick="openImage(this.src)"
+>
+
+            <h3>AI Assignment Risk Visualization</h3>
+
+            <p>
+                A dashboard that helps students understand assignment risk.
+            </p>
+
+            <button onclick="showProject()">
+                View Project
+            </button>
+
+            <a href="https://github.com/" target="_blank">
+                <button>GitHub</button>
+            </a>
+
+        </div>
+
+        <div class="project">
+
+            <h3>Next Gen EV Batteries</h3>
+
+            <p>
+                A web dashboard project about next-generation electric vehicle batteries.
+            </p>
+
+            <button onclick="showEV()">
+                View Project
+            </button>
+
+            <a href="https://github.com/" target="_blank">
+                <button>GitHub</button>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Contact -->
+
+    <div class="about" id="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>Email: yousif@example.com</p>
+
+        <p>Phone: +91 XXXXX XXXXX</p>
+
+        <form onsubmit="sendMessage(event)">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message" required></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+        <p id="success"></p>
+
+        <a href="https://wa.me/919176390737" target="_blank">
+            <button class="whatsapp">
+                WhatsApp
+            </button>
+        </a>
+
+        <a href="https://www.instagram.com/_yousif249_/" target="_blank">
+            <button class="instagram">
+                Instagram
+            </button>
+        </a>
+
+    </div>
+
+    <!-- Top Button -->
+
+    <button id="topBtn"
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        ⬆️ Top
+    </button>
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 Yousif Ahmed. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function showProject() {
+            alert("AI Assignment Risk Visualization Dashboard");
+        }
+
+        function showEV() {
+            alert("Next Gen EV Batteries Dashboard");
+        }
+
+        function sendMessage(event) {
+    event.preventDefault();
+
+    let name = document.querySelector('input[type="text"]').value;
+    let email = document.querySelector('input[type="email"]').value;
+    let message = document.querySelector("textarea").value;
+
+    let text =
+        "Hello Yousif!%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Email: " + email + "%0A" +
+        "Message: " + message;
+
+    window.open(
+        "https://wa.me/919176390737?text=" + text,
+        "_blank"
+    );
+}
+        
+
+        function toggleTheme() {
+
+            document.body.classList.toggle("light");
+
+            let btn = document.getElementById("themeBtn");
+
+            if (document.body.classList.contains("light")) {
+
+                localStorage.setItem("theme", "light");
+
+                btn.innerHTML = "🌙 Dark Mode";
+
+            } else {
+
+                localStorage.setItem("theme", "dark");
+
+                btn.innerHTML = "☀️ Light Mode";
+
+            }
+
+        }
+
+        if (localStorage.getItem("theme") === "light") {
+
+            document.body.classList.add("light");
+
+            document.getElementById("themeBtn").innerHTML =
+                "🌙 Dark Mode";
+
+        }
+function updateClock() {
+    document.getElementById("clock").innerHTML =
+        new Date().toLocaleTimeString();
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+function changeMessage() {
+    document.getElementById("message").innerHTML =
+        "Thank you for visiting my website! ❤️";
+}
+let visitors = localStorage.getItem("visitors") || 0;
+
+visitors++;
+
+localStorage.setItem("visitors", visitors);
+
+document.getElementById("visitors").innerHTML = visitors;
+function showInfo() {
+    let info = document.getElementById("info");
+
+    if (info.style.display === "none") {
+        info.style.display = "block";
+    } else {
+        info.style.display = "none";
+    }
+}
+function showAchievement(name) {
+    alert("Achievement: " + name);
+}
+function openImage(src) {
+    window.open(src, "_blank");
+}
+
+    </script>
+
+</body>
+</html>
